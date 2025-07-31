@@ -23,5 +23,5 @@ function submitJustification() {
   localStorage.setItem("voted", "true");
 
   // Danke anzeigen
-  document.querySelector("body").innerHTML = "<h2>🎉 Danke für deine Stimme!</h2>";
+  document.querySelector("body").innerHTML = "<h2>🎉 Thank you!</h2>";
 }
