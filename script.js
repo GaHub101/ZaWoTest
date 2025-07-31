@@ -2,26 +2,17 @@ let selectedVote = "";
 
 function showJustification(choice) {
   selectedVote = choice;
+  document.getElementById("voteValue").value = selectedVote;
+
   document.getElementById("voteStep").style.display = "none";
   document.getElementById("justificationStep").style.display = "block";
 }
 
 function submitJustification() {
-  if (localStorage.getItem("voted") === "true") {
-    alert("Du hast bereits abgestimmt.");
-    return;
-  }
+  // Wert der sichtbaren Textarea ins versteckte Input-Feld kopieren
+  document.getElementById("justificationValue").value =
+    document.getElementById("justificationInput").value;
 
-  // Setze versteckte Felder
-  document.getElementById("voteValue").value = selectedVote;
-  document.getElementById("justificationValue").value = document.getElementById("justificationInput").value;
-
-  // Formular absenden
   document.getElementById("voteForm").submit();
-
-  // Stimme merken
-  localStorage.setItem("voted", "true");
-
-  // Danke anzeigen
-  document.querySelector("body").innerHTML = "<h2>🎉 Thank you!</h2>";
+  alert("Danke für deine Bewertung!");
 }
