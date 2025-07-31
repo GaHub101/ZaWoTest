@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hot or Not?</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>🔥 Hot or Not?</h1>
+    <form id="voteForm" action="https://docs.google.com/forms/d/e/1FAIpQLSeItrQ7FrmoFid_c25CUlF6m1Wdpi1RzY44wf-h8pMflv1YOA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+      <input type="hidden" name="entry.1402107530" id="voteValue" />
+      <div class="buttons">
+  <button type="button" class="hot" onclick="submitVote('Hot')">🔥 Hot</button>
+  <button type="button" class="not" onclick="submitVote('Not')">❄️ Not</button>
+</div>
+    </form>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
