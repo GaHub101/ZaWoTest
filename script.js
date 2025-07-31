@@ -3,9 +3,9 @@ let selectedVote = "";
 window.onload = () => {
   // Prüfe, ob User schon gevotet hat
   if (localStorage.getItem("hasVoted")) {
-    alert("Du hast bereits abgestimmt. Danke!");
+    alert("Thanks for your vote!");
     // Optional: voteStep ausblenden und Nachricht anzeigen
-    document.getElementById("voteStep").innerHTML = "<p>Du hast schon abgestimmt. Danke für deine Stimme!</p>";
+    document.getElementById("voteStep").innerHTML = "<p>You have already voted. Thanks!</p>";
   }
 };
 
@@ -36,9 +36,9 @@ function submitJustification() {
   localStorage.setItem("voteJustification", document.getElementById("justificationInput").value);
 
   document.getElementById("voteForm").submit();
-  alert("Danke für deine Bewertung!");
+  alert("Thanks for your vote!");
   
   // Optional: Nach dem Absenden Formular verstecken
   document.getElementById("justificationStep").style.display = "none";
-  document.getElementById("voteStep").innerHTML = "<p>Danke für deine Stimme!</p>";
+  document.getElementById("voteStep").innerHTML = "<p>Thanks for your vote!</p>";
 }
