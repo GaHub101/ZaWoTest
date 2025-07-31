@@ -1,17 +1,27 @@
-function submitVote(choice) {
-  // Bereits abgestimmt? -> blockieren
+let selectedVote = "";
+
+function showJustification(choice) {
+  selectedVote = choice;
+  document.getElementById("voteStep").style.display = "none";
+  document.getElementById("justificationStep").style.display = "block";
+}
+
+function submitJustification() {
   if (localStorage.getItem("voted") === "true") {
     alert("Du hast bereits abgestimmt.");
     return;
   }
 
-  // Stimme setzen und speichern
-  document.getElementById("voteValue").value = choice;
+  // Setze versteckte Felder
+  document.getElementById("voteValue").value = selectedVote;
+  document.getElementById("justificationValue").value = document.getElementById("justificationInput").value;
+
+  // Formular absenden
   document.getElementById("voteForm").submit();
 
-  // Abstimmung merken
+  // Stimme merken
   localStorage.setItem("voted", "true");
 
-  // Feedback anzeigen
-  alert("Danke für deine Bewertung!");
+  // Danke anzeigen
+  document.querySelector("body").innerHTML = "<h2>🎉 Danke für deine Stimme!</h2>";
 }
