@@ -1,8 +1,8 @@
 <div class="container" id="voteStep">
   <h1>🔥 Hot or Not?</h1>
   <form id="voteForm" action="https://docs.google.com/forms/d/e/DEINE_FORM_ID/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-    <input type="hidden" name="entry.DEINE_VOTE_ENTRY" id="voteValue" />
-    <input type="hidden" name="entry.DEINE_BEGRUENDUNG_ENTRY" id="justificationValue" />
+    <input type="hidden" name="entry.1402107530" id="voteValue" />
+    <input type="hidden" name="entry.240059700" id="justificationValue" />
     <div class="buttons">
       <button type="button" onclick="showJustification('Hot')">🔥 Hot</button>
       <button type="button" onclick="showJustification('Not')">❄️ Not</button>
@@ -11,8 +11,8 @@
 </div>
 
 <div class="container" id="justificationStep" style="display:none;">
-  <h2>Warum hast du so abgestimmt?</h2>
-  <textarea id="justificationInput" placeholder="Begründung (optional)"></textarea><br/>
+  <h2>... but why?</h2>
+  <textarea id="justificationInput" placeholder="Justify!"></textarea><br/>
   <button onclick="submitJustification()">Absenden</button>
 </div>
 
